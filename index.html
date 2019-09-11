@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="wap-font-scale" content="no">
+  <!-- 清除缓存 -->
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <!-- 灰色半透明 -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>加载中</title>
+  <!-- 引入样式 -->
+  <!-- 官方的地址 -->
+  <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+  <!-- 先引入 rem适应工具 -->
+  <script src="./static/JS/flexible.min.js"></script>
+  <script>
+    /*eslint-disable */
+    var _hmt = _hmt || []
+
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- 先引入 Vue -->
+  <script src="./static/JS/vue.min.js"></script>
+  <!-- 引入组件库 -->
+   <!-- 官方的地址 -->
+  <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+  <!-- 引入数字加减效果 -->
+  <script src="./static/JS/TweenMax.min.js" async></script>
+  <!-- built files will be auto injected -->
+  <!-- 强行把用户放大的文字还原（因为用户放大文字会导致样式错乱） -->
+  <script type="text/javascript">
+    (() => {
+      function handleFontSize() {
+        WeixinJSBridge.invoke('setFontSizeCallback', {
+          fontSize: 0
+        })
+        WeixinJSBridge.on('menu:setfont', () => {
+          WeixinJSBridge.invoke('setFontSizeCallback', {
+            fontSize: 0
+          })
+        })
+      }
+      if (typeof WeixinJSBridge === 'object' && typeof WeixinJSBridge.invoke === 'function') {
+        handleFontSize()
+      }
+      if (document.addEventListener) {
+        document.addEventListener('WeixinJSBridgeReady', handleFontSize, false)
+      }
+      if (document.attachEvent) {
+        document.attachEvent('WeixinJSBridgeReady', handleFontSize)
+        document.attachEvent('onWeixinJSBridgeReady', handleFontSize)
+      }
+    })()
+
+  </script>
+</body>
+
+</html>
