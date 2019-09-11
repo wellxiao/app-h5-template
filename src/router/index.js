@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import {
   HelloWorld,
-  Weather
+  Weather,
+  Rules
 } from './fullpath'
 import config from '@/config'
 
@@ -17,11 +18,24 @@ const router = new Router({
   routes: [{
     path: '/HelloWorld',
     name: 'HelloWorld',
+    meta: {
+      title: 'HelloWorld'
+    },
     component: HelloWorld
-  },{
+  }, {
     path: '/Weather',
     name: 'Weather',
+    meta: {
+      title: '天气预报'
+    },
     component: Weather
+  }, {
+    path: '/Rules',
+    name: '规则',
+    meta: {
+      title: '测试规则'
+    },
+    component: Rules
   }]
 })
 

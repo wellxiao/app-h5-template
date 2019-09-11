@@ -1,13 +1,19 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import { logger, environment } from '@/util/methods'
+import {
+  logger,
+  environment
+} from '@/util/methods'
 import App from './App'
 
 import FastClick from 'fastclick'
 
 // 安卓jsbridge需要加载附件
-const { isApp, isAndroid } = environment()
+const {
+  isApp,
+  isAndroid
+} = environment()
 if (isAndroid) {
   require('@/util/WebViewJavascriptBridge')
 }
@@ -21,12 +27,19 @@ import store from './store'
 import VueTouch from 'vue-touch'
 import VConsole from 'vconsole/dist/vconsole.min.js'
 if (process.env.NODE_ENV !== 'production') {
-    let vConsole = new VConsole() // 初始化
+  let vConsole = new VConsole() // 初始化
 }
 // 移动设备上的浏览器默认会在用户点击屏幕大约延迟300毫秒后才会触发点击事件
 // ，这是为了检查用户是否在做双击。为了能够立即响应用户的点击事件
 FastClick.attach(document.body)
-Vue.use(VueTouch, { name: 'v-touch' })
+
+
+// 触控
+Vue.use(VueTouch, {
+  name: 'v-touch'
+})
+
+
 // 动态加载标题
 Vue.use(require('vue-wechat-title'))
 
@@ -38,6 +51,8 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>',
 })

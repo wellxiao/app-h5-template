@@ -16,13 +16,14 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "sa-sdk-javascript": "^1.12.4",
     "fastclick": "^1.0.6",
+    "px2rem-loader": "^0.1.9",
+    "sa-sdk-javascript": "^1.12.4",
     "vconsole": "^3.2.0",
     "vue": "^2.6.8",
     "vue-router": "^3.0.1",
     "vue-touch": "^2.0.0-beta.4",
-    "vue-wechat-title": "^2.0.4",
+    "vue-wechat-title": "^2.0.5",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

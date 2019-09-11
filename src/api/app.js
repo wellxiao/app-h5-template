@@ -5,4 +5,4 @@ const { preUrlPath } = require('@/config')
 export const demoURL = `${preUrlPath}/demo/demo/demo`
 
 // 天气预报的事例接口
-export const weatherURL = 'http://www.weather.com.cn/data/cityinfo/101010100.html'
+export const weatherURL = '/api/v1/data/cityinfo/101010100.html'
